@@ -2,116 +2,168 @@
 
 ## 📝 Descrizione
 
-Questo è un template moderno e scalabile per lo sviluppo di API REST con Node.js, progettato seguendo le migliori pratiche di sviluppo. Offre una struttura solida e configurazioni predefinite per avviare rapidamente nuovi progetti.
+Questo template moderno e scalabile offre un punto di partenza robusto per lo sviluppo di API REST con Node.js, seguendo le migliori pratiche di sviluppo software.
 
 ## ✨ Caratteristiche Principali
 
-- 🔧 **Architettura Modulare**: Struttura chiara e organizzata
-- 🛡️ **Sicurezza integrata**: Helmet, CORS configurati
-- 📋 **Gestione Ambiente**: Configurazione dotenv
-- 🧪 **Testing Ready**: Jest configurato
-- 📝 **Logging Professionale**: Winston per logging strutturato
-- 🔍 **Qualità Codice**: ESLint e Prettier
-- 📦 **Modulo ES**: Utilizzo di import/export moderni
+- 🏗️ **Architettura Modulare e Scalabile**
 
-## 🛠️ Tecnologie Utilizzate
+  - Struttura organizzata per progetti enterprise
+  - Supporto nativo al versionamento delle API
+  - Separazione chiara di responsabilità (MVC)
 
-- **Runtime**: Node.js
-- **Framework**: Express
-- **Logging**: Winston
-- **Validazione**: (Da integrare)
-- **Test**: Jest
-- **Sicurezza**: Helmet, Cors
-- **Gestione Env**: dotenv
+- 🛡️ **Sicurezza Avanzata**
+
+  - Protezione tramite Helmet
+  - Configurazione CORS personalizzabile
+  - Gestione sicura delle variabili d'ambiente
+
+- 📊 **Strumenti di Sviluppo**
+
+  - Test automatizzati con Jest
+  - Logging professionale con Winston
+  - Controllo qualità del codice (ESLint e Prettier)
+
+- 🔧 **Tecnologie Moderne**
+  - Moduli ES con import/export
+  - Supporto TypeScript (opzionale)
+  - Configurazione flessibile per diversi ambienti
+
+## 🛠️ Stack Tecnologico
+
+| Categoria | Tecnologia | Versione Consigliata |
+| --------- | ---------- | -------------------- |
+| Runtime   | Node.js    | 18.x+                |
+| Framework | Express    | 4.x+                 |
+| Database  | MongoDB    | 6.x+                 |
+| Testing   | Jest       | 29.x+                |
+| Logging   | Winston    | 3.x+                 |
+| Sicurezza | Helmet     | 6.x+                 |
 
 ## 🚦 Prerequisiti
 
-- Node.js (versione 18.x o superiore)
-- npm (versione 9.x o superiore)
+- Node.js 18.x o superiore
+- npm 9.x o superiore
+- MongoDB 6.x o superiore
+- Git
 
-## 🔧 Installazione
-
-1. Clona il repository
+## 🔧 Installazione Rapida
 
 ```bash
+# Clona il repository
 git clone https://github.com/tuonome/nodejs-api-template.git
 cd nodejs-api-template
-```
 
-2. Installa le dipendenze
-
-```bash
+# Installa le dipendenze
 npm install
-```
 
-3. Configura le variabili d'ambiente
-
-```bash
+# Copia e configura le variabili d'ambiente
 cp .env.example .env
 # Modifica .env con le tue configurazioni
 ```
 
 ## 📋 Comandi Disponibili
 
-- `npm run dev`: Avvia il server in modalità sviluppo
-- `npm start`: Avvia il server in produzione
-- `npm test`: Esegue la suite di test
-- `npm run lint`: Verifica la qualità del codice
-- `npm run format`: Formatta il codice automaticamente
+| Comando          | Descrizione                       |
+| ---------------- | --------------------------------- |
+| `npm run dev`    | Avvia server in modalità sviluppo |
+| `npm start`      | Avvia server in produzione        |
+| `npm test`       | Esegue test suite                 |
+| `npm run lint`   | Verifica qualità codice           |
+| `npm run format` | Formatta codice automaticamente   |
 
 ## 🏗️ Struttura del Progetto
 
 ```
-├── src/
-│   ├── controllers/     # Logica di business
-│   ├── middleware/     # Middleware personalizzati
-│   ├── routes/         # Definizione delle route
-│   ├── utils/          # Utility e helper
-│   └── index.js        # Entry point dell'applicazione
-├── tests/              # Test suite
-├── .env                # Variabili d'ambiente
-├── .eslintrc.json      # Configurazione ESLint
-└── package.json        # Configurazione del progetto
+src/
+├── config/                     # Configurazioni
+│   └── database.js             # Configurazione della connessione al database
+├── controllers/                # Logica di business
+│   ├── v1/
+│   │   ├── item.controller.js  # Controller per gli item (versione 1)
+│   │   └── stato.controller.js # Controller per lo stato (versione 1)
+│   └── v2/
+│       ├── item.controller.js  # Controller per gli item (versione 2)
+│       └── stato.controller.js # Controller per lo stato (versione 2)
+├── middleware/                 # Middleware personalizzati
+├── models/                     # Modelli dati
+│   └── item.js                 # Modello Mongoose per gli item
+├── routes/                     # Definizione API routes
+│   ├── v1/
+│   │   ├── item.routes.js      # Rotte per gli item (versione 1)
+│   │   └── stato.routes.js     # Rotte per lo stato (versione 1)
+│   └── v2/
+│       ├── item.routes.js      # Rotte per gli item (versione 2)
+│       └── stato.routes.js     # Rotte per lo stato (versione 2)
+├── tests/                      # Test suite
+├── utils/                      # Funzioni utility
+└── index.js                    # Entry point dell'applicazione
 ```
 
-## 🔒 Endpoint Disponibili
+## 🔒 Endpoint di Esempio
 
-- `GET /api/health`: Verifica lo stato del server
+### API v1
 
-## 🚀 Guida Rapida per Contribuire
+- `GET /api/v1/stato`: Verifica stato server
+- `GET /api/v1/items`: Lista items
+- `POST /api/v1/items`: Crea nuovo item
 
-1. Forka il repository
-2. Crea un branch per la tua feature (`git checkout -b feature/nuova-feature`)
-3. Committa le modifiche (`git commit -m 'Aggiungi nuova feature'`)
-4. Pusha il branch (`git push origin feature/nuova-feature`)
-5. Apri una Pull Request
+### API v2
+
+- `GET /api/v2/stato`: Stato server (versione 2)
+- `GET /api/v2/items`: Lista items (versione 2)
+- `POST /api/v2/items`: Crea item (versione 2)
+
+## 🧪 Testing
+
+Utilizziamo Jest per i testing. Aggiungi i tuoi test in `tests/`.
+
+```bash
+npm test
+```
+
+## 🔍 Best Practices Implementate
+
+- Versionamento API
+- Gestione centralizzata errori
+- Logging strutturato
+- Validazione input
+- Configurazioni ambiente separate
+
+## 🚀 Guida per Contribuire
+
+1. Fork del repository
+2. Crea branch feature (`git checkout -b feature/nuova-feature`)
+3. Committa modifiche (`git commit -m 'Aggiungi nuova feature'`)
+4. Pusha branch (`git push origin feature/nuova-feature`)
+5. Apri Pull Request
+
+## 🔒 Sicurezza
+
+- Helmet per headers HTTP
+- CORS configurabile
+- Variabili sensibili in `.env`
 
 ## 📦 Dipendenze Principali
 
 - `express`: Framework web
+- `mongoose`: ODM MongoDB
 - `winston`: Logging
-- `dotenv`: Gestione variabili ambiente
-- `helmet`: Sicurezza HTTP headers
-- `cors`: Gestione Cross-Origin Resource Sharing
-
-## 🧪 Testing
-
-Utilizza Jest per i test. Aggiungi i tuoi test nella cartella `tests/`.
-
-## 🔍 Best Practices
-
-- Utilizzare ES Modules
-- Gestione centralizzata degli errori
-- Logging strutturato
-- Configurazioni separate per ambiente
+- `dotenv`: Gestione ambiente
+- `helmet`: Sicurezza headers
+- `cors`: Gestione CORS
 
 ## 📄 Licenza
 
-- MIT
+MIT License
 
 ## 🤝 Contributi
 
-Contributi sono benvenuti! Per favore, leggi le linee guida per i contributi prima di iniziare.
+Contributi sono benvenuti! Leggi le linee guida prima di iniziare.
+
+## 📞 Supporto
+
+Per domande o problemi, [apri un'issue](https://github.com/tuonome/nodejs-api-template/issues) o contatta support@example.com.
 
 ---
 

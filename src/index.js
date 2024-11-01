@@ -5,9 +5,14 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 import { logger } from "./utils/logger.js";
 import { errorHandler } from "./middleware/errorHandler.js";
+import connectDB from "./config/database.js"; // Importa la funzione di connessione
+import morgan from "morgan";
 import routes from "./routes/index.js";
 
 dotenv.config();
+
+// Connessione al database
+connectDB();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,6 +21,11 @@ const port = process.env.PORT || 3000;
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+// Middleware
+app.use(express.json());
+app.use(helmet());
+app.use(cors());
+app.use(morgan("dev"));
 
 // Routes
 app.use("/api", routes);
