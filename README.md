@@ -155,7 +155,7 @@ npm test
 
 ## 📄 Licenza
 
-MIT License
+[MIT License] (https://github.com/UbyXsofT/node-api-template2?tab=MIT-1-ov-file)
 
 ## 🤝 Contributi
 
@@ -163,7 +163,7 @@ Contributi sono benvenuti! Leggi le linee guida prima di iniziare.
 
 ## 📞 Supporto
 
-Per domande o problemi, [apri un'issue](https://github.com/tuonome/nodejs-api-template/issues) o contatta support@example.com.
+Per domande o problemi, [apri un'issue](https://github.com/UbyXsofT/node-api-template2/issues) o contatta info@ubyxsoft.com.
 
 ---
 
