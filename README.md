@@ -155,7 +155,7 @@ npm test
 
 ## 📄 Licenza
 
-[MIT License] (https://github.com/UbyXsofT/node-api-template2?tab=MIT-1-ov-file)
+Questo progetto è distribuito sotto la licenza MIT. Vedi il file LICENSE per i dettagli.
 
 ## 🤝 Contributi
 
